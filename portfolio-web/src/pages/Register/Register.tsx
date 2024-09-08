@@ -3,11 +3,12 @@ import { Container, TextField, Button, Typography, Box, Paper } from '@mui/mater
 import Snackbar from '@mui/material/Snackbar';
 import { Client, Users, AuthResultStatus} from '../../apiClient';
 import { useNavigate } from 'react-router-dom';
+import { url } from '../Common/Common';
 
 
 export const Register: React.FC = () => {
     const navigate = useNavigate(); // Initialize navigate
-    const client = new Client("https://localhost:7212"); 
+    const client = new Client(url); 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');

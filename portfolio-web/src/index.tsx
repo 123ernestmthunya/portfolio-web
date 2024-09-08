@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { Login } from './pages/Login/Login';
 import { Register } from './pages/Register/Register';
 import NoPageFound from './pages/NoPageFound/NoPageFound';
+import { Profile } from './pages/Profile/Profile';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,6 +18,7 @@ root.render(
       <Routes>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+           <Route path="profile" element={<Profile />} />
           <Route path="*" element={<NoPageFound />} />
       </Routes>
       <App />

@@ -2,9 +2,12 @@
 import React, { useState } from 'react';
 import { Container, TextField, Button, Typography, Box, Paper } from '@mui/material';
 import { Client} from '../../apiClient';
+import { useNavigate } from 'react-router-dom';
+import { url } from '../Common/Common';
 
 export const Login: React.FC = () => {
-    const client = new Client("https://localhost:7212"); 
+  const navigate = useNavigate(); // Initialize navigate
+    const client = new Client(url); 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     
@@ -15,6 +18,7 @@ export const Login: React.FC = () => {
             const result = await client.login(username, password);
             if (result.status === 0) {
                 alert(result.message)
+                navigate('/profile');
             } else{
                 alert(result.message)
             }
